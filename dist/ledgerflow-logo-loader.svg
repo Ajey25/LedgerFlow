@@ -1,0 +1,80 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient Glow -->
+    <linearGradient id="backFolderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#3a7bd5" />
+    </linearGradient>
+
+    <!-- Front Page Accent Gradient -->
+    <linearGradient id="barGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#00c6ff" />
+      <stop offset="100%" stop-color="#0072ff" />
+    </linearGradient>
+
+    <!-- Outer Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseApp {
+      0% { transform: scale(0.96); opacity: 0.85; }
+      50% { transform: scale(1.03); opacity: 1; }
+      100% { transform: scale(0.96); opacity: 0.85; }
+    }
+    @keyframes barRise {
+      0% { transform: scaleY(0.3); opacity: 0.5; }
+      50% { transform: scaleY(1); opacity: 1; }
+      100% { transform: scaleY(0.3); opacity: 0.5; }
+    }
+    @keyframes progressSlide {
+      0% { x: 50; width: 20; }
+      50% { x: 90; width: 60; }
+      100% { x: 50; width: 20; }
+    }
+    
+    .app-card-group {
+      transform-origin: 100px 95px;
+      animation: pulseApp 2.4s ease-in-out infinite;
+    }
+    .bar-1 { transform-origin: 90px 135px; animation: barRise 1.8s ease-in-out 0s infinite; }
+    .bar-2 { transform-origin: 110px 135px; animation: barRise 1.8s ease-in-out 0.3s infinite; }
+    .bar-3 { transform-origin: 130px 135px; animation: barRise 1.8s ease-in-out 0.6s infinite; }
+    
+    .loading-bar {
+      animation: progressSlide 1.8s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="100" cy="165" rx="45" ry="6" fill="#00d2ff" opacity="0.15" filter="url(#neonGlow)" />
+
+  <!-- Animated App Icon Container -->
+  <g class="app-card-group" filter="url(#neonGlow)">
+    <!-- Blue Back Folder Shape -->
+    <rect x="48" y="40" width="70" height="110" rx="16" fill="url(#backFolderGrad)" />
+    
+    <!-- Dark Document Card (Front) -->
+    <rect x="68" y="48" width="80" height="98" rx="12" fill="#0b0e14" stroke="#4a709c" stroke-width="2" />
+    
+    <!-- Folded Paper Corner -->
+    <path d="M 132 48 L 148 64 L 132 64 Z" fill="#7fa8d9" opacity="0.8" />
+
+    <!-- Text Placeholders -->
+    <rect x="80" y="72" width="28" height="4" rx="2" fill="#8aa2c0" opacity="0.8" />
+    <rect x="80" y="82" width="48" height="4" rx="2" fill="#8aa2c0" opacity="0.8" />
+    <rect x="80" y="92" width="22" height="4" rx="2" fill="#8aa2c0" opacity="0.8" />
+
+    <!-- Chart Bars inside Page -->
+    <rect class="bar-1" x="86" y="120" width="12" height="15" rx="3" fill="url(#barGrad)" />
+    <rect class="bar-2" x="104" y="110" width="12" height="25" rx="3" fill="url(#barGrad)" />
+    <rect class="bar-3" x="122" y="100" width="12" height="35" rx="3" fill="url(#barGrad)" />
+  </g>
+
+  <!-- Startup Progress Bar Bottom -->
+  <rect x="50" y="176" width="100" height="3" rx="1.5" fill="#1c2333" />
+  <rect class="loading-bar" x="50" y="176" width="30" height="3" rx="1.5" fill="url(#backFolderGrad)" filter="url(#neonGlow)" />
+</svg>

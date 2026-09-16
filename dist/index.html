@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#070b17" />
+    <meta
+      name="description"
+      content="LedgerFlow - Smart invoice, payment and business finance management"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/ledgerflow-logo-loader.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>LedgerFlow</title>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: #070b17;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background:
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(45, 55, 120, 0.22),
+            transparent 50%
+          ),
+          #070b17;
+
+        opacity: 1;
+        visibility: visible;
+
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      #initial-loader.hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .initial-loader-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .initial-loader-logo img {
+        width: 225px;
+        height: 225px;
+        object-fit: contain;
+      }
+
+      .initial-loader-brand {
+        margin-top: 12px;
+
+        color: #f8fafc;
+
+        font-family: Inter, Arial, sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: -0.7px;
+      }
+
+      .initial-loader-tagline {
+        margin-top: 6px;
+
+        color: #64748b;
+
+        font-family: Inter, Arial, sans-serif;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-CjP-BEFO.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C9CT42F_.css">
+  </head>
+
+  <body>
+    <div id="initial-loader">
+      <div class="initial-loader-content">
+        <div class="initial-loader-logo">
+          <!-- Animated SVG logo handles its own internal animation -->
+          <img src="/ledgerflow-logo-loader.svg" alt="LedgerFlow" />
+        </div>
+
+        <div class="initial-loader-brand">LedgerFlow</div>
+        <div class="initial-loader-tagline">Business finance, simplified</div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+
+  </body>
+</html>
